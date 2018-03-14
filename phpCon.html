@@ -6,7 +6,8 @@ $p = "imadumbbot";
 $con = new mysqli($severname, $un, $p);
 
 if(!$con){
+	echo "<p> Connection Failed </p>";
 	die("connection Failed:" . mysqli_connect_error());
 }
-echo "Connection SUccessful";
+echo "<p>Connection SUccessful</p>";
 ?>
