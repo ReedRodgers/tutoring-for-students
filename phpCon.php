@@ -10,7 +10,7 @@ if(!$con){
 	die("connection Failed:" . mysqli_connect_error());
 }
 
-$sql = "Select Last_name, First_name FROM Student_test Where First_name = "Jason";
+$sql = "Select First_name, Last_name from student_test where First_name = \"Jason\"";
 $result = $conn -> query($sql);
 
 if ($result->num_rows > 0) {
