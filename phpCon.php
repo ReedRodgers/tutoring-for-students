@@ -12,3 +12,6 @@ if(!$con){
 echo "<p>Connection SUccessful</p>";
 echo "</body>";
 ?>
+$sql = "Select Last_name, First_name, FROM Student_test Where First_name = Jason";
+$result = $conn -> query($sql);
+echo $result;
