@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$servername = "localhost";
+$servername = "ip-172-31-6-39.ca-central-1.compute.internal";
 $un = "bot";
 $p = "imadumbbot";
 $dbname = "MSCI_444";
