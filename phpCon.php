@@ -1,27 +1,34 @@
 <?php
-$servername = "MSCI_444@ec2-35-182-240-106.ca-central-1.compute.amazonaws.com";
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+$servername = "localhost";
 $un = "bot";
 $p = "imadumbbot";
+$dbname = "MSCI_444";
 
-$con = new mysqli($severname, $un, $p);
+echo "test";
 
-if(!$con){
-	echo "Connection Failed";
-	die("connection Failed:" . mysqli_connect_error());
-}
+$con = new mysqli($servername, $un, $p, $dbname) or die("Error: " . mysqli_error($link));
 
-$sql = "Select First_name, Last_name from student_test where First_name = \"Jason\"";
-$result = $conn -> query($sql);
+$sql = "Select * from Student";
+echo "query";
+$result = $con -> query($sql);
 
-if ($result->num_rows > 0) {
+echo "before if";
+
+if ($result -> num_rows > 0) {
     // output data of each row
-    while($row = $result->fetch_assoc()) {
+	echo "if";
+    while($row = mysqli_fetch_array($result)){
 	echo "test";
-        echo "Name: " . $row["First_name"] . " " .  $row["Last_name"];
+        echo "Name: " . $row["Student Name"] . " " .  $row["Balance"];
     }
 } else {
     echo "0 results";
 }
-$conn->close();
+
+$con->close();
 
 ?>
