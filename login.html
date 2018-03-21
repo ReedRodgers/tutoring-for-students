@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
-<form action="#">
+<form id="login" action="#">
 
 
 
@@ -38,7 +38,7 @@
   
 </ul>
 
-	
+
 	<ul class="mdl-list">
 		<li class="mdl-list__item">
   <div class="mdl-textfield mdl-js-textfield">
@@ -54,6 +54,10 @@
 </li>
 </ul>
 
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="login-button">
+  Login
+</button>
+
 
 <style>
 .demo-list-control {
@@ -62,6 +66,19 @@
 
 .demo-list-radio {
   display: inline;
+}
+
+#login {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+}
+#login-button {
+	display: flex;
+	justify-content: center;
+	position: relative;
+	align-items: center;
+	margin: 0 auto;
 }
 </style>
 
