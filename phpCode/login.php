@@ -1,5 +1,4 @@
 <?php 
-	echo "<p>hmm</p>";
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 	session_start();
@@ -17,7 +16,7 @@
 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
-<form id="login" action="redirect.php">
+<form id="login" action="redirect.php" method="get">
 
 <?php 
 	if($_SESSION['failed']==1){
@@ -34,7 +33,7 @@
     </span>
     <span class="mdl-list__item-secondary-action">
       <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
-        <input type="radio" id="list-option-1" class="mdl-radio__button" name="teacher" value="1" unchecked />
+        <input type="radio" id="list-option-1" class="mdl-radio__button" name="teacher" value="0" unchecked />
       </label>
     </span>
   </li>
@@ -45,7 +44,7 @@
     </span>
     <span class="mdl-list__item-secondary-action">
       <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-2">
-        <input type="radio" id="list-option-2" class="mdl-radio__button" name="student" value="1" unchecked />
+        <input type="radio" id="list-option-2" class="mdl-radio__button" name="student" value="0" unchecked />
       </label>
     </span>
   </li>
@@ -56,13 +55,13 @@
 	<ul class="mdl-list">
 		<li class="mdl-list__item">
   <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="firstName">
+    <input class="mdl-textfield__input" type="text" id="firstName" name="firstName">
     <label class="mdl-textfield__label" for="firstName">First Name</label>
   </div>
 </li>
 <li class="mdl-list__item">
  <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="lastName">
+    <input class="mdl-textfield__input" type="text" id="lastName" name="lastName">
     <label class="mdl-textfield__label" for="lastName">Last Name</label>
   </div>
 </li>
@@ -73,17 +72,22 @@
 </button>
 <?php
 	$role="Student";
-	$name=$_GET['firstName'] . " " . $_GET['lastName'];
-	if(isset($_GET['teacher']){
+	echo $_GET["firstName"];
+	$name=$_GET["firstName"] . " " . $_GET["lastName"];
+	echo "<p>".$name."</p>";
+	if(isset($_GET["teacher"])){
 		$role="Teacher";
 	}
-	$sql="Select count(*) from " . $role . " where " . $role . ".name = " . $name;
-	$result=$con -> query($sql);
-	if(mysqli_fetch_field($result) > 0){
-		$_SESSION['failed']=0;
-		$_SESSION['name']=$name
-		$_SESSION['role']=$role
+	$sql="Select count(*) from " . $role . " where " . $role . ".`Student Name` = " . $name;
+	$result=mysqli_query($con,$sql);
+	$count=mysqli_fetch_field($result);
+	if($count>0){
+echo "<p>result > 0 </p>";
+		$_SESSION["failed"]=0;
+		$_SESSION['name']=$name;
+		$_SESSION['role']=$role;
 	}else{
+echo "<p> no result :( </p>";
 		$_SESSION['failed']=1;
 	}
 ?>
@@ -118,5 +122,4 @@
 
 </body>
 </html>
-";
 
