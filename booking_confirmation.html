@@ -25,6 +25,15 @@
   display: flex;
   box-sizing:border-box;
   align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.demo-card-event > .mdl-card__actions > .mdl-button {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 .demo-card-event > .mdl-card__actions > .material-icons {
   padding-right: 10px;
@@ -48,10 +57,12 @@
   </div>
   <div class="mdl-card__actions mdl-card--border">
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Confirm
+      <i class="material-icons">done</i>
     </a>
     <div class="mdl-layout-spacer"></div>
-    <i class="material-icons">done</i>
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      <i class="material-icons">clear</i>
+    </a>
   </div>
 </div>
 
