@@ -6,7 +6,7 @@
 	$un = "bot";
 	$p = "imadumbbot";
 	$dbname = "MSCI_444";
-	$con = new mysqli($servername, $un, $p, $dbname) or die("Error: " . mysqli_error($link));
+	$_SESSION["con"] = new mysqli($servername, $un, $p, $dbname) or die("Error: " . mysqli_error($link));
 ?>
 <html>
 <body>
@@ -70,27 +70,7 @@
 <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="login-button">
   Login
 </button>
-<?php
-	$role="Student";
-	echo $_GET["firstName"];
-	$name=$_GET["firstName"] . " " . $_GET["lastName"];
-	echo "<p>".$name."</p>";
-	if(isset($_GET["teacher"])){
-		$role="Teacher";
-	}
-	$sql="Select count(*) from " . $role . " where " . $role . ".`Student Name` = " . $name;
-	$result=mysqli_query($con,$sql);
-	$count=mysqli_fetch_field($result);
-	if($count>0){
-echo "<p>result > 0 </p>";
-		$_SESSION["failed"]=0;
-		$_SESSION['name']=$name;
-		$_SESSION['role']=$role;
-	}else{
-echo "<p> no result :( </p>";
-		$_SESSION['failed']=1;
-	}
-?>
+
 <style>
 .demo-list-control {
   width: 300px;
