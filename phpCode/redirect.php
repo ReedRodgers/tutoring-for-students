@@ -3,7 +3,7 @@
 	echo $_GET["firstName"];
 	$name=$_GET["firstName"] . " " . $_GET["lastName"];
 	echo "<p>".$name."</p>";
-	$role=$_GET["student-teacher"]
+	$role=$_GET["student-teacher"];
 	$sql="Select count(*) from " . $role . " where " . $role . ".`Student Name` = " . $name;
 	$result=mysqli_query($con,$sql);
 	$count=mysqli_fetch_field($result);

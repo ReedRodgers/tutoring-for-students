@@ -33,7 +33,7 @@
     </span>
     <span class="mdl-list__item-secondary-action">
       <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
-        <input type="radio" id="list-option-1" class="mdl-radio__button" name="teacher" value="0" unchecked />
+        <input type="radio" id="list-option-1" class="mdl-radio__button" name="student-teacher" value="Teacher" unchecked />
       </label>
     </span>
   </li>
@@ -44,7 +44,7 @@
     </span>
     <span class="mdl-list__item-secondary-action">
       <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-2">
-        <input type="radio" id="list-option-2" class="mdl-radio__button" name="student" value="0" unchecked />
+        <input type="radio" id="list-option-2" class="mdl-radio__button" name="student-teacher" value="Student" unchecked />
       </label>
     </span>
   </li>
