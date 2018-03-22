@@ -9,33 +9,25 @@
 	ini_set('display_errors', 1);
 	$role="Student";
 	$name=$_GET["firstName"] . " " . $_GET["lastName"];
-	echo "<p>".$name." ".$_GET["student-teacher"]."</p>";
 	$role=$_GET["student-teacher"];
-	$sql="Select count(*) from " . $role . " where " . $role . ".`Student Name` = '" . $name. "'";
-echo $sql;
+	$sql="Select count(*) as count from " . $role . " where " . $role . ".`Student Name` = '" . $name. "'";
 	$result=mysqli_query($con, $sql);
-	if(mysqli_num_rows($result)>0){
-echo "<p>result > 0 </p>";
+	$count=mysqli_fetch_object($result)->count;
+	mysqli_close($con);
+	if(count>0){
 		$_SESSION["failed"]=0;
 		$_SESSION["name"]=$name;
 		$_SESSION["role"]=$role;
 	}else{
-echo "<p> no result :( </p>";
 		$_SESSION["failed"]=1;
-		echo "<form action='http://35.182.240.106/tutoring-for-students/phpCode/login.php'>";
-			echo "<input type='submit'>OK</input>";
-		echo "</form>";
+		header('Location: http://35.182.240.106/tutoring-for-students/phpCode/login.php');
+		die();
 	}
 	if($role=="Student"){
-		echo "<p>".$_SESSION["name"]."</p>".
-		"<form action='http://35.182.240.106/tutoring-for-students/phpCode/student_homepage.php'>".
-			"<input type='submit'>OK</input>".
-		"</form>";
+		header('Location: http://35.182.240.106/tutoring-for-students/phpCode/student_homepage.php');
+		die();
 	}else{
-		echo "<p>".$name."</p>";
-		echo "<form action='http://35.182.240.106/tutoring-for-students/phpCode/teacher_homepage.php'>".
-			"<input type='submit'>OK</input>".
-		"</form>";
+		header('Location: http://35.182.240.106/tutoring-for-students/phpCode/teacher_homepage.php');
+		die();
 	}
-	mysqli_close($con);
 ?>
