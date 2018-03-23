@@ -20,14 +20,14 @@
 		$_SESSION["role"]=$role;
 	}else{
 		$_SESSION["failed"]=1;
-		header('Location: http://35.182.240.106/tutoring-for-students/phpCode/login.php');
+		header('Location: http://35.182.240.106/tutoring-for-students/login.php');
 		die();
 	}
 	if($role=="Student"){
-		header('Location: http://35.182.240.106/tutoring-for-students/phpCode/student_homepage.php');
+		header('Location: http://35.182.240.106/tutoring-for-students/student_homepage1.php');
 		die();
 	}else{
-		header('Location: http://35.182.240.106/tutoring-for-students/phpCode/teacher_homepage.php');
+		header('Location: http://35.182.240.106/tutoring-for-students/teacher_homepage.php');
 		die();
 	}
 ?>

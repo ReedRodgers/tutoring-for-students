@@ -1,4 +1,29 @@
+<?php 
+	session_start();
+	$servername = "ip-172-31-6-39.ca-central-1.compute.internal";
+	$un = "bot";
+	$p = "imadumbbot";
+	$dbname = "MSCI_444";
+	$con = new mysqli($servername, $un, $p, $dbname) or die("Error: " . mysqli_error($link));
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+?>
 <html>
+<head>
+<script>
+	function updateDates(str){
+		if(window.XMLHttpRequest){
+			xmlhttp = new XMLHttpRequest();
+		}
+		xmlhttp.onreadystatechange = function(){
+			if(this.readyState = 4 && this.status = 200){
+				document.getElementById("times").innerHTML = this.responseText;
+			}
+		};
+		xmlhttp.open("GET", "getDates.php?q="+str, true);
+		xmlhttp.send();
+	}
+</script>
 <body>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -10,7 +35,17 @@
 	<ul class="mdl-list">
 		<li class="mdl-list__item">
   <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="subject">
+    <select name="subject" onchange="updateDates(this.value)">
+<?php
+	$sql = "SELECT `Subject Name` as name FROM Subject";
+	echo $sql;
+	$result=mysqli_query($con, $sql);
+	while($row=mysqli_fetch_assoc($result)){
+		$subject=$row["name"];
+		echo "<option value='".$subject."'>".$subject."</option>";
+	}
+?>
+    </select>
     <label class="mdl-textfield__label" for="subject">Subject</label>
   </div>
 </li>
