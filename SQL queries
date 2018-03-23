@@ -1,0 +1,35 @@
+$sql = "SELECT Subject Name,`Cost`,`Start Time`, Location.`Address`, Location.`Description`\n"
+
+    . "FROM Meeting, Teacher, `Location`\n"
+
+    . "WHERE Meeting.`TID` = Teacher.`TID` And Teacher.`Teacher Name`= \'Gary Oak\' AND Location.`Location ID`=`Meeting`.`Location ID`";
+
+$sql = "SELECT Subject Name FROM Subject";
+
+$sql = "SELECT Start Time,`End Time` \n"
+
+    . "FROM Schedule, `Subject`\n"
+
+    . "WHERE Subject.TID = Schedule.TID and Subject.`Subject Name`= \'Math\' and Schedule.`Meeting ID` IS NULL";
+
+$sql = "SELECT Teacher.`Teacher Name`\n"
+
+    . "FROM Schedule, Subject, `Teacher`\n"
+
+    . "WHERE Subject.TID = Schedule.TID = Teacher.`TID` and Subject.`Subject Name`= \'Math\' and Schedule.`Meeting ID` IS NULL and Schedule.`Start Time` = \'2018-03-16 14:00:00\' and Schedule.`End Time`= \'2018-03-16 14:30:00\'";
+
+$sql = "Select Teacher.`TID`\n"
+
+    . "From Teacher\n"
+
+    . "Where Teacher.`Teacher Name`= \'Gary Oak\'";
+
+$sql = "INSERT INTO Schedule(TID, Start Time, End Time) \n"
+
+    . "VALUES (1, \'2018-03-16 09:00:00\', \'2018-03-16 10:30:00\')";
+
+$sql = "SELECT Balance \n"
+
+    . "FROM Student \n"
+
+    . "WHERE `Student Name`= \"Reed Abook\"";
