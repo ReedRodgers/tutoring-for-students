@@ -36,7 +36,7 @@
 </li>
 <li class="mdl-list__item">
  <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="date">
+    <select name = "date" id = "date" disabled = "disabled">
     <label class="mdl-textfield__label" for="date">Date</label>
   </div>
 </li>
