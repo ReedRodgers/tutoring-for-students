@@ -10,7 +10,7 @@
 	$role="Student";
 	$name=$_GET["firstName"] . " " . $_GET["lastName"];
 	$role=$_GET["student-teacher"];
-	$sql="Select count(*) as count from " . $role . " where " . $role . ".`Student Name` = '" . $name. "'";
+	$sql="Select count(*) as count from " . $role . " where " . $role . ".`".$role." Name` = '" . $name. "'";
 	$result=mysqli_query($con, $sql);
 	$count=mysqli_fetch_object($result)->count;
 	mysqli_close($con);

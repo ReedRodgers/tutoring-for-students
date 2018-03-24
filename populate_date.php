@@ -8,7 +8,7 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 	
-	$sql = "SELECT `Start Time` as start,`End Time` as end, TID as TID FROM Schedule, Subject".
+	$sql = "SELECT `Start Time` as start,`End Time` as end, Subject.TID as TID FROM Schedule, Subject".
 "WHERE Subject.TID = Schedule.TID and Subject.`Subject Name`= '".$_GET['subject']."'";
 	$result = mysqli_query($sql, $con);
 	while($row = mysqli_fetch_object($result){
