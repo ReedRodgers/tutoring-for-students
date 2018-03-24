@@ -20,7 +20,7 @@
 	<ul class="mdl-list">
 		<li class="mdl-list__item">
   <div class="mdl-textfield mdl-js-textfield">
-    <select name="subject" onchange="updateDates(this.value)">
+    <select name="subject" id = "subject">
 <?php
 	$sql = "SELECT `Subject Name` as name FROM Subject";
 	echo $sql;
