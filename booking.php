@@ -9,21 +9,6 @@
 	ini_set('display_errors', 1);
 ?>
 <html>
-<head>
-<script>
-	function updateDates(str){
-		if(window.XMLHttpRequest){
-			xmlhttp = new XMLHttpRequest();
-		}
-		xmlhttp.onreadystatechange = function(){
-			if(this.readyState = 4 && this.status = 200){
-				document.getElementById("times").innerHTML = this.responseText;
-			}
-		};
-		xmlhttp.open("GET", "getDates.php?q="+str, true);
-		xmlhttp.send();
-	}
-</script>
 <body>
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
