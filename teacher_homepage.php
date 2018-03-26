@@ -45,7 +45,7 @@
     </nav>
   </div>
   <main class="mdl-layout__content">
-    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" id="upcomingSessions">
+    <table style="margin: 0px auto;" class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" id="upcomingSessions">
   <thead>
     <tr>
       <th class="mdl-data-table__cell--non-numeric">Subject</th>
