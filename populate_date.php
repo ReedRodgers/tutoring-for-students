@@ -10,9 +10,9 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 	
-	$sql = "SELECT `Start Time` as start,`End Time` as end, FROM Schedule, Subject WHERE Subject.TID = Schedule.TID and Subject.`Subject Name`= '" .  $_GET["s"] . "'";
+	$sql = "SELECT `Start Time` as start,`End Time` as end FROM Schedule, Subject WHERE Subject.TID = Schedule.TID and Subject.`Subject Name`= '" .  $_GET["s"] . "' AND Schedule.`Meeting ID` IS NULL";
 
-	//echo "<select>";
+	echo "<option value = ''>SELECT</option>";
 	$result = mysqli_query($con, $sql);
 	while($row = mysqli_fetch_object($result)){
 	//	echo "<p>" . $row -> TID . "~" . $row -> start . $row -> start . "-" . $row -> end ."</p>";

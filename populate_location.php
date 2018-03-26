@@ -10,17 +10,13 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 	$time = explode("~", $_GET['d']);
-ql = "SELECT Teacher.`Teacher Name` as name, TID as TID"
-
-    . "FROM Schedule, Subject, `Teacher`"
-
-    . "WHERE Subject.TID = Schedule.TID = Teacher.`TID` and Subject.`Subject Name`= '" . $_GET['s'] . "' and Schedule.`Meeting ID` IS NULL and Schedule.`Start Time` = '" . $time[0] . "' and Schedule.`End Time`= '" . $time[1] . "'";
+	$sql = "SELECT `Location ID` as id, Description as desc, Address as addrFROM Location";
 
 	//echo "<select>";
 	$result = mysqli_query($con, $sql);
 	while($row = mysqli_fetch_object($result)){
 	//	echo "<p>" . $row -> TID . "~" . $row -> start . $row -> start . "-" . $row -> end ."</p>";
-		echo "<option value = '" . $row -> TID  . "'>" . $row -> name . "</option>";
+		echo "<option value = '" . $row -> id . "'>" . $row -> desc . ", " . $row -> "</option>";
 
 	}
 	//echo "</select>";

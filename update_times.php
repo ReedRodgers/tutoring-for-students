@@ -25,50 +25,23 @@
 	}
 ?>
 
-<ul class="demo-list-control mdl-list">
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons  mdl-list__item-avatar">person</i>
-      Teacher
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
-        <input type="radio" id="list-option-1" class="mdl-radio__button" name="student-teacher" value="Teacher" unchecked />
-      </label>
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      <i class="material-icons  mdl-list__item-avatar">person</i>
-      Student
-    </span>
-    <span class="mdl-list__item-secondary-action">
-      <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-2">
-        <input type="radio" id="list-option-2" class="mdl-radio__button" name="student-teacher" value="Student" unchecked />
-      </label>
-    </span>
-  </li>
-  
-</ul>
-
-
 	<ul class="mdl-list">
 		<li class="mdl-list__item">
   <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="firstName" name="firstName">
-    <label class="mdl-textfield__label" for="firstName">First Name</label>
+    <input class="mdl-textfield__input" type="text" id="Start Time" name="Start Time">
+    <label class="mdl-textfield__label" for="Start Time">Start Time</label>
   </div>
 </li>
 <li class="mdl-list__item">
  <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="lastName" name="lastName">
-    <label class="mdl-textfield__label" for="lastName">Last Name</label>
+    <input class="mdl-textfield__input" type="text" id="End Time" name="End Time">
+    <label class="mdl-textfield__label" for="lastName">End Time</label>
   </div>
 </li>
 </ul>
 
-<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="login-button">
-  Login
+<button type="submit" class="mdlbutton mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="update-button">
+  Add Time
 </button>
 
 <style>
@@ -83,7 +56,7 @@
   top: 20%;
   left: 40%;
 }
-#login-button {
+#update-button {
 	display: flex;
 	justify-content: center;
 	position: relative;

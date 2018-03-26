@@ -20,6 +20,7 @@
 		<li class="mdl-list__item">
 			<div class="mdl-textfield mdl-js-textfield">
     				<select name="subject" id = "subject" onchange = "getDate(this.value)">
+					<option value = "">SELECT</option>
 <?php
 	$sql = "SELECT `Subject Name` as name FROM Subject";
 	echo $sql;
@@ -35,20 +36,33 @@
 		</li>
 		<li class="mdl-list__item">
  			<div class="mdl-textfield mdl-js-textfield">
-				<select name = "date" id = "date" onchange = "getLocaiton(document.getElementById('subject'), this.value)">
+				<select name = "date" id = "date" onchange = "getTeacher(document.getElementById('subject').value, this.value)">
+					<option value = "">SELECT</option>
+				</select>
    				<label class="mdl-textfield__label" for="date">Date</label>
   			</div>
 		</li>
 		<li class="mdl-list__item">
  			<div class="mdl-textfield mdl-js-textfield">
-    				<select id="location" name = "location" onchange = "getTeacher(document.getElementById('subject'), getElementById('date'), this.value)"></select>
-    				<label class="mdl-textfield__label" for="time">Time</label>
+    				<select name = "teacher"  id="teacher">
+					<option value = "">SELECT</option>
+				</select>
+    				<label class="mdl-textfield__label" for="teacher">Teacher</label>
   			</div>
 		</li>
 		<li class="mdl-list__item">
  			<div class="mdl-textfield mdl-js-textfield">
-    				<select name = "teacher"  id="teacher" >SELECT</select>
-    				<label class="mdl-textfield__label" for="location">Location</label>
+    				<select id="location" name = "location">
+					<option value = "">SELECT</option>
+<?php
+	$sql = "SELECT `Location ID` as id, Address as ad, Description as des FROM Location";
+	$result = mysqli_query($con, $sql);
+	while($row=mysqli_fetch_assoc($result)){
+		echo "<option value='" . $row['id']."'>" . $row['des'] . ", " . $row['ad'] . "</option>";
+	}
+?>
+				</select>
+				<label class="mdl-textfield__label" for="location">Location</label>
   			</div>
 		</li>
 	</ul>
