@@ -10,7 +10,7 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 	$time = explode("~", $_GET['d']);
-	$sql = "SELECT Teacher.`Teacher Name` as name, Teacher.TID as id FROM Schedule, Subject, `Teacher` WHERE Subject.TID = Schedule.TID = Teacher.`TID` and Subject.`Subject Name`= '" . $_GET['s'] . "' and Schedule.`Meeting ID` IS NULL and Schedule.`Start Time` = '" . $time[0] . "' and Schedule.`End Time`= '" . $time[1] . "'";
+	$sql = "SELECT Teacher.`Teacher Name` as name, Teacher.TID as id FROM Schedule, Subject, `Teacher` WHERE Subject.TID = Schedule.TID and Schedule.TID = Teacher.`TID` and Subject.`Subject Name`= '" . $_GET['s'] . "' and Schedule.`Meeting ID` IS NULL and Schedule.`Start Time` = '" . $time[0] . "' and Schedule.`End Time`= '" . $time[1] . "'";
 
 	echo "<option value = ''>SELECT</option>";
 	$result = mysqli_query($con, $sql);

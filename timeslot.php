@@ -11,5 +11,6 @@
 	$sql = "INSERT into Schedule(TID, `Start Time`, `End Time`)".
 		"VALUES('" . $_SESSION['id'] . "', '" . $_GET['StartTime'] . "', '" . $_GET['EndTime'] . "')";
 	mysqli_query($con, $sql);
-//	header("Location: 
+	header("Location: http://35.182.240.106/tutoring-for-students/update_times.php");
+	die(); 
 ?>

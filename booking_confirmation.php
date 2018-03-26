@@ -9,7 +9,7 @@
 	$p = "imadumbbot";
 	$dbname = "MSCI_444";
 	$con = new mysqli($servername, $un, $p, $dbname) or die("Error: " . mysqli_error($link));
-	$sql = "INSERT INTO Schedule(`Location ID`, `SID`, `Subject Name`, `TID`, `Start Time`) VALUES (" . $_GET['location'] . ", " . $_SESSION['id'] . " , " . $_GET['subject'] . ", " . $_GET['teacher'] . ", " . explode("~", $_GET['date'])[0] . ")";
+	$sql = "INSERT INTO Meeting(`Location ID`, `SID`, `Subject Name`, `TID`, `Start Time`, Cost) VALUES (" . $_GET['location'] . ", " . $_SESSION['id'] . " , '" . $_GET['subject'] . "', " . $_GET['teacher'] . ", '" . explode("~", $_GET['date'])[0] . "', 420.69)";
 	mysqli_query($con, $sql);
 	header("Location: http://35.182.240.106/tutoring-for-students/student_homepage1.php");
 	die();
@@ -61,6 +61,7 @@
 <div class="demo-card-event mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title mdl-card--expand">
     <h4>
+<?php echo $sql . "<br>"; ?>
       Grade 11 Math<br>
       April 4, 2018<br>
       6:00-7:00pm<br>
