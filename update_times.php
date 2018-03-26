@@ -12,18 +12,9 @@
 <body>
 
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
-<form id="login" action="redirect.php" method="get">
-
-<?php 
-	if($_SESSION['failed']==1){
-		echo "<p>Your login information did not match out records.</p><p> Please check spelling and try again</p>";
-		$_SESSION['failed']=0;
-	}
-?>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 <form action = "timeslot.php" method = "GET">
 	<div class="mdl-textfield mdl-js-textfield">
@@ -35,9 +26,13 @@
 		<input class="mdl-textfield__input" type = "datetime-local" id = "EndTime" name = "EndTime">
 	</div>
 	<div>
+		<input type = "datetime-local" id = "EndTime" name = "EndTime">
+		<label for = "EndTime">End Time</label>
+	</div>
+	<div>
 		<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="login-button">
-  Submit
-</button>
+       Submit
+    </button>
 	</div>
 </form>
 
@@ -61,12 +56,5 @@
 	margin: 0 auto;
 }
 </style>
-
-
-
-
-</form>
-
-
 </body>
 </html>
