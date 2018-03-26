@@ -15,11 +15,16 @@
 </head>
 <body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
 <form action = "booking_confirmation.php">
 	<ul class="mdl-list">
 		<li class="mdl-list__item">
-			<div class="mdl-textfield mdl-js-textfield">
-    				<select name="subject" id = "subject" onchange = "getDate(this.value)">
+			<div class="mdl-selectfield mdl-js-selectfield">
+				<label class="mdl-label" for="subject">Subject</label>
+    				<select class="mdl-selectfield__select" name="subject" id = "subject" onchange = "getDate(this.value)">
 					<option value = "">SELECT</option>
 <?php
 	$sql = "SELECT `Subject Name` as name FROM Subject";
@@ -31,27 +36,30 @@
 	}
 ?>
     				</select>
-    				<label class="mdl-textfield__label" for="subject">Subject</label>
+    				
   			</div>
 		</li>
 		<li class="mdl-list__item">
  			<div class="mdl-textfield mdl-js-textfield">
-				<select name = "date" id = "date" onchange = "getTeacher(document.getElementById('subject').value, this.value)">
+ 				<label class="mdl-label" for="date">Date</label>
+				<select class="mdl-selectfield__select" name = "date" id = "date" onchange = "getTeacher(document.getElementById('subject').value, this.value)">
 					<option value = "">SELECT</option>
 				</select>
-   				<label class="mdl-textfield__label" for="date">Date</label>
+   				
   			</div>
 		</li>
 		<li class="mdl-list__item">
  			<div class="mdl-textfield mdl-js-textfield">
+ 				<label class="mdl-label" for="teacher">Teacher</label>
     				<select name = "teacher"  id="teacher">
 					<option value = "">SELECT</option>
 				</select>
-    				<label class="mdl-textfield__label" for="teacher">Teacher</label>
+    				
   			</div>
 		</li>
 		<li class="mdl-list__item">
  			<div class="mdl-textfield mdl-js-textfield">
+ 				<label class="mdl-label" for="location">Location</label>
     				<select id="location" name = "location">
 					<option value = "">SELECT</option>
 <?php
@@ -62,7 +70,7 @@
 	}
 ?>
 				</select>
-				<label class="mdl-textfield__label" for="location">Location</label>
+				
   			</div>
 		</li>
 	</ul>
