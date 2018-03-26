@@ -9,18 +9,18 @@
 	ini_set('display_errors', 1);
 ?>
 <html>
+<head>
+	<script src = "bookdd.js"></script>
+	<script src = "jquery.js"></script>
+</head>
 <body>
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
-<div id="login">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
+<form action = "booking_confirmation.php">
 	<ul class="mdl-list">
 		<li class="mdl-list__item">
-  <div class="mdl-textfield mdl-js-textfield">
-    <select name="subject" id = "subject">
+			<div class="mdl-textfield mdl-js-textfield">
+    				<select name="subject" id = "subject" onchange = "getDate(this.value)">
+					<option value = "">SELECT</option>
 <?php
 	$sql = "SELECT `Subject Name` as name FROM Subject";
 	echo $sql;
@@ -30,44 +30,51 @@
 		echo "<option value='".$subject."'>".$subject."</option>";
 	}
 ?>
-    </select>
-    <label class="mdl-textfield__label" for="subject">Subject</label>
-  </div>
-</li>
-<li class="mdl-list__item">
- <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="date">
-    <label class="mdl-textfield__label" for="date">Date</label>
-  </div>
-</li>
-<li class="mdl-list__item">
- <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="time">
-    <label class="mdl-textfield__label" for="time">Time</label>
-  </div>
-</li>
-
-<li class="mdl-list__item">
- <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="location">
-    <label class="mdl-textfield__label" for="location">Location</label>
-  </div>
-</li>
-
-</ul>
-
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="login-button">
-  Book
-</button>
-
-
-</div>
-
+    				</select>
+    				<label class="mdl-textfield__label" for="subject">Subject</label>
+  			</div>
+		</li>
+		<li class="mdl-list__item">
+ 			<div class="mdl-textfield mdl-js-textfield">
+				<select name = "date" id = "date" onchange = "getTeacher(document.getElementById('subject').value, this.value)">
+					<option value = "">SELECT</option>
+				</select>
+   				<label class="mdl-textfield__label" for="date">Date</label>
+  			</div>
+		</li>
+		<li class="mdl-list__item">
+ 			<div class="mdl-textfield mdl-js-textfield">
+    				<select name = "teacher"  id="teacher">
+					<option value = "">SELECT</option>
+				</select>
+    				<label class="mdl-textfield__label" for="teacher">Teacher</label>
+  			</div>
+		</li>
+		<li class="mdl-list__item">
+ 			<div class="mdl-textfield mdl-js-textfield">
+    				<select id="location" name = "location">
+					<option value = "">SELECT</option>
+<?php
+	$sql = "SELECT `Location ID` as id, Address as ad, Description as des FROM Location";
+	$result = mysqli_query($con, $sql);
+	while($row=mysqli_fetch_assoc($result)){
+		echo "<option value='" . $row['id']."'>" . $row['des'] . ", " . $row['ad'] . "</option>";
+	}
+?>
+				</select>
+				<label class="mdl-textfield__label" for="location">Location</label>
+  			</div>
+		</li>
+	</ul>
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="login-button" action = "submit">
+  		Book
+	</button>
+</form>
 <style>
 #login {
-  position: absolute;
-  top: 20%;
-  left: 40%;
+  	position: absolute;
+  	top: 20%;
+  	left: 40%;
 }
 #login-button {
 	display: flex;
@@ -77,9 +84,5 @@
 	margin: 0 auto;
 }
 </style>
-
-
-
-
 </body>
 </html>
