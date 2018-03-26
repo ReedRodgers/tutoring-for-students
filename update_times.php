@@ -15,7 +15,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
+<a href = "http://35.182.240.106/tutoring-for-students/login.php">Logout</a>
+<a href = "http://35.182.240.106/tutoring-for-students/teacher_homepage.php">Home</a>
 <form action = "timeslot.php" method = "GET">
 	<div class="mdl-textfield mdl-js-textfield">
 		<label class="mdl-label" for="StartTime">Start Time</label>
@@ -24,10 +25,6 @@
 	<div class="mdl-textfield mdl-js-textfield">
 		<label class="mdl-label" for="EndTime">End Time</label>
 		<input class="mdl-textfield__input" type = "datetime-local" id = "EndTime" name = "EndTime">
-	</div>
-	<div>
-		<input type = "datetime-local" id = "EndTime" name = "EndTime">
-		<label for = "EndTime">End Time</label>
 	</div>
 	<div>
 		<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="login-button">

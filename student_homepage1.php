@@ -19,8 +19,8 @@
 }
 
 </style>
-
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+  <a href = "http://35.182.240.106/tutoring-for-students/login.php">Logout</a>
   <header class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row">
       <!-- Title -->
