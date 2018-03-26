@@ -83,6 +83,6 @@
 #upcomingSessions {
   position: absolute;
   top: 30%;
-  left: 35%;
+  left: 20%;
 }
 </style>
