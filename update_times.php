@@ -25,24 +25,19 @@
 	}
 ?>
 
-	<ul class="mdl-list">
-		<li class="mdl-list__item">
-  <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="Start Time" name="Start Time">
-    <label class="mdl-textfield__label" for="Start Time">Start Time</label>
-  </div>
-</li>
-<li class="mdl-list__item">
- <div class="mdl-textfield mdl-js-textfield">
-    <input class="mdl-textfield__input" type="text" id="End Time" name="End Time">
-    <label class="mdl-textfield__label" for="lastName">End Time</label>
-  </div>
-</li>
-</ul>
-
-<button type="submit" class="mdlbutton mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="update-button">
-  Add Time
-</button>
+<form action = "timeslot.php" method = "GET">
+	<div class="mdl-textfield mdl-js-textfield">
+		<input class="mdl-textfield__input" type="datetime-local" id="StartTime" name="StartTime">
+		<label class="mdl-textfield__label" for="Start Time">Start Time</label>
+	</div>
+	<div>
+		<input type = "datetime-local" id = "EndTime" name = "EndTime">
+		<label for = "EndTime">End Time</label>
+	<div>
+	<div>
+		<input type = "submit">Submit</input>
+	</div>
+</form>
 
 <style>
 .demo-list-control {

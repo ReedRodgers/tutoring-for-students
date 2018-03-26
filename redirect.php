@@ -10,9 +10,10 @@
 	$role="Student";
 	$name=$_GET["firstName"] . " " . $_GET["lastName"];
 	$role=$_GET["student-teacher"];
-	$sql="Select count(*) as count from " . $role . " where " . $role . ".`".$role." Name` = '" . $name. "'";
+	$sql="Select SID as id from " . $role . " where " . $role . ".`".$role." Name` = '" . $name. "'";
 	$result=mysqli_query($con, $sql);
-	$count=mysqli_fetch_object($result)->count;
+	$count = mysqli_num_rows($result);
+	$sid = mysqli_fetch_object($result)->id;
 	mysqli_close($con);
 	if($count>0){
 		$_SESSION["failed"]=0;

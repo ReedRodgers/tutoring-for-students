@@ -15,7 +15,7 @@
 </head>
 <body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
-<div id="login">
+<form action = "booking_confirmation.php">
 	<ul class="mdl-list">
 		<li class="mdl-list__item">
 			<div class="mdl-textfield mdl-js-textfield">
@@ -66,10 +66,10 @@
   			</div>
 		</li>
 	</ul>
-	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="login-button">
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="login-button" action = "submit">
   		Book
 	</button>
-</div>
+</form>
 <style>
 #login {
   	position: absolute;
