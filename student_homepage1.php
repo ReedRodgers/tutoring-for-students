@@ -31,7 +31,7 @@
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link" href="http://35.182.240.106/tutoring-for-students/booking.php">Booking</a>
         <a class="mdl-navigation__link" href="">Resources</a>
-        <a class="mdl-navigation__link" href="">Account</a>
+        <a class="mdl-navigation__link" href="http://35.182.240.106/tutoring-for-students/bill.php">Account</a>
       </nav>
     </div>
   </header>

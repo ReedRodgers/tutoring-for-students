@@ -28,10 +28,10 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation -->
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Update Availability</a>
+        <a class="mdl-navigation__link" href="http://35.182.240.106/tutoring-for-students/booking.php">Update Availability</a>
         <a class="mdl-navigation__link" href="">Update Subjects</a>
         <a class="mdl-navigation__link" href="">Add Resources</a>
-        <a class="mdl-navigation__link" href="http://35.182.240.106/tutoring-for-students/teacher_meeting.php">Meeting</a>
+        <a class="mdl-navigation__link" href="http://35.182.240.106/tutoring-for-students/teacher_meetings.php">Meeting</a>
       </nav>
     </div>
   </header>
