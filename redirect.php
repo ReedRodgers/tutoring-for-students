@@ -10,10 +10,16 @@
 	$role="Student";
 	$name=$_GET["firstName"] . " " . $_GET["lastName"];
 	$role=$_GET["student-teacher"];
-	$sql="Select SID as id from " . $role . " where " . $role . ".`".$role." Name` = '" . $name. "'";
+	$type = "";
+	if($role == "Student"){
+		$type = "SID";
+	}else{
+		$type = "TID";
+	}
+	$sql="Select ".$type." as id from " . $role . " where " . $role . ".`".$role." Name` = '" . $name. "'";
 	$result=mysqli_query($con, $sql);
 	$count = mysqli_num_rows($result);
-	$sid = mysqli_fetch_object($result)->id;
+	$_SESSION['id'] = mysqli_fetch_object($result)->id;
 	mysqli_close($con);
 	if($count>0){
 		$_SESSION["failed"]=0;

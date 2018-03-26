@@ -9,7 +9,8 @@
 	$p = "imadumbbot";
 	$dbname = "MSCI_444";
 	$con = new mysqli($servername, $un, $p, $dbname) or die("Error: " . mysqli_error($link));
-	$sql = "INSERT INTO Schedule(`Location ID`, `SID`, `Subject Name`, `TID`, `Start Time`) VALUES (" . $_GET['location'] . ", " . $_SESSION['sid'] . " , " . $_GET['subject'] . ", " . $_GET['teacher'] . ", " . explode("~", $_GET['date'])[0] . ")";
+	$sql = "INSERT INTO Schedule(`Location ID`, `SID`, `Subject Name`, `TID`, `Start Time`) VALUES (" . $_GET['location'] . ", " . $_SESSION['id'] . " , " . $_GET['subject'] . ", " . $_GET['teacher'] . ", " . explode("~", $_GET['date'])[0] . ")";
+	mysqli_query($con, $sql);
 	header("Location: http://35.182.240.106/tutoring-for-students/student_homepage1.php");
 	die();
 ?>
