@@ -60,16 +60,18 @@
 	$p = "imadumbbot";
 	$dbname = "MSCI_444";
 	$con = new mysqli($servername, $un, $p, $dbname) or die("Error: " . mysqli_error($link));
-	$sql = "SELECT Subject as sub, 'Start Time' as dt, Cost as c FROM Meetings WHERE SID = " . $_SESSION['name'];
+	$sql = "SELECT `Subject Name` as sub, 'Start Time' as dt, Cost as c FROM Meeting WHERE SID = " . $_SESSION['id'];
 	$result = mysqli_query($con, $sql);
-	while($row = mysqli_fetch_object){
-		$dt = explode(" ", $row['dt']);
+	
+	while($row = mysqli_fetch_object($result)){
+		$dt = explode(" ", $row -> dt);
 		echo "<tr>";
-		echo "<td class = 'mdl-data-table__cell--non-numeric'>" . $row -> sub . "</td>";
+		echo "<td class = 'mdl-data-table__cell--non-numeric'>" . $row ->sub . "</td>";
 		echo "<td>" . $dt[0] . "</td>";
 		echo "<td>" . $dt[1] . "</td>";
 		echo "<td>" . $row['c'] . "</td>";
 		echo "</tr>";
+	}
 ?>	
   </tbody>
 </table>
