@@ -27,15 +27,17 @@
 
 <form action = "timeslot.php" method = "GET">
 	<div class="mdl-textfield mdl-js-textfield">
+		<label class="mdl-label" for="StartTime">Start Time</label>
 		<input class="mdl-textfield__input" type="datetime-local" id="StartTime" name="StartTime">
-		<label class="mdl-textfield__label" for="Start Time">Start Time</label>
+	</div>
+	<div class="mdl-textfield mdl-js-textfield">
+		<label class="mdl-label" for="EndTime">End Time</label>
+		<input class="mdl-textfield__input" type = "datetime-local" id = "EndTime" name = "EndTime">
 	</div>
 	<div>
-		<input type = "datetime-local" id = "EndTime" name = "EndTime">
-		<label for = "EndTime">End Time</label>
-	<div>
-	<div>
-		<input type = "submit">Submit</input>
+		<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="login-button">
+  Submit
+</button>
 	</div>
 </form>
 
