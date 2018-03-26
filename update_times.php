@@ -25,6 +25,32 @@
 	}
 ?>
 
+<ul class="demo-list-control mdl-list">
+  <li class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+      <i class="material-icons  mdl-list__item-avatar">person</i>
+      Teacher
+    </span>
+    <span class="mdl-list__item-secondary-action">
+      <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
+        <input type="radio" id="list-option-1" class="mdl-radio__button" name="student-teacher" value="Teacher" unchecked />
+      </label>
+    </span>
+  </li>
+  <li class="mdl-list__item">
+    <span class="mdl-list__item-primary-content">
+      <i class="material-icons  mdl-list__item-avatar">person</i>
+      Student
+    </span>
+    <span class="mdl-list__item-secondary-action">
+      <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-2">
+        <input type="radio" id="list-option-2" class="mdl-radio__button" name="student-teacher" value="Student" unchecked />
+      </label>
+    </span>
+  </li>
+  
+</ul>
+
 
 	<ul class="mdl-list">
 		<li class="mdl-list__item">
