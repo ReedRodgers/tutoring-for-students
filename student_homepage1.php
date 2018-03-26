@@ -54,24 +54,23 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">Grade 11 Math</td>
-      <td>March 30, 2018</td>
-      <td>6:00pm</td>
-      <td>$25</td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">Grade 11 Chemistry</td>
-      <td>April 4, 2018</td>
-      <td>7:00pm</td>
-      <td>$25</td>
-    </tr>
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">Grade 11 French</td>
-      <td>April 5, 2018</td>
-      <td>5:30pm</td>
-      <td>$25</td>
-    </tr>
+<?php 
+	$servername = "ip-172-31-6-39.ca-central-1.compute.internal";
+	$un = "bot";
+	$p = "imadumbbot";
+	$dbname = "MSCI_444";
+	$con = new mysqli($servername, $un, $p, $dbname) or die("Error: " . mysqli_error($link));
+	$sql = "SELECT Subject as sub, 'Start Time' as dt, Cost as c FROM Meetings WHERE SID = " . $_SESSION['name'];
+	$result = mysqli_query($con, $sql);
+	while($row = mysqli_fetch_object){
+		$dt = explode(" ", $row['dt']);
+		echo "<tr>";
+		echo "<td class = 'mdl-data-table__cell--non-numeric'>" . $row -> sub . "</td>";
+		echo "<td>" . $dt[0] . "</td>";
+		echo "<td>" . $dt[1] . "</td>";
+		echo "<td>" . $row['c'] . "</td>";
+		echo "</tr>";
+?>	
   </tbody>
 </table>
     </main>
